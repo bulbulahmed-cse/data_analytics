@@ -89,67 +89,59 @@ class _DataAnalyticsState extends State<DataAnalytics> {
 
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: SizedBox(
-                width: 700,
-                child: Expanded(
-                  child: ListView(
-
-                    children: [
-                      DataTable(
-                        columns: [
-                          DataColumn(
-                            label: Text("Date"),
-                          ),
-                          DataColumn(
-                            label: Text("TradeCode"),
-                          ),
-                          DataColumn(
-                            label: Text("high"),
-                          ),
-                          DataColumn(
-                            label: Text("low"),
-                          ),
-                          DataColumn(
-                            label: Text("open"),
-                          ),
-                          DataColumn(
-                            label: Text("close"),
-                          ),
-                          DataColumn(
-                            label: Text("volume"),
-                          ),
-                        ],
-                        rows: _data
-                            .map(
-                              (e) => DataRow(cells: [
-                            DataCell(
-                              Text(e.date),
-                            ),
-                            DataCell(
-                              Text(e.tradeCode),
-                            ),
-                            DataCell(
-                              Text(e.high),
-                            ),
-                            DataCell(
-                              Text(e.low),
-                            ),
-                            DataCell(
-                              Text(e.open),
-                            ),
-                            DataCell(
-                              Text(e.close),
-                            ),
-                            DataCell(
-                              Text(e.volume),
-                            ),
-                          ]),
-                        )
-                            .toList(),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: DataTable(
+                  columns: [
+                    DataColumn(
+                      label: Text("Date"),
+                    ),
+                    DataColumn(
+                      label: Text("TradeCode"),
+                    ),
+                    DataColumn(
+                      label: Text("high"),
+                    ),
+                    DataColumn(
+                      label: Text("low"),
+                    ),
+                    DataColumn(
+                      label: Text("open"),
+                    ),
+                    DataColumn(
+                      label: Text("close"),
+                    ),
+                    DataColumn(
+                      label: Text("volume"),
+                    ),
+                  ],
+                  rows: _data
+                      .map(
+                        (e) => DataRow(cells: [
+                      DataCell(
+                        Text(e.date),
                       ),
-                    ],
-
-                  ),
+                      DataCell(
+                        Text(e.tradeCode),
+                      ),
+                      DataCell(
+                        Text(e.high),
+                      ),
+                      DataCell(
+                        Text(e.low),
+                      ),
+                      DataCell(
+                        Text(e.open),
+                      ),
+                      DataCell(
+                        Text(e.close),
+                      ),
+                      DataCell(
+                        Text(e.volume),
+                      ),
+                    ]),
+                  )
+                      .toList(),
                 ),
               ),
             ),
