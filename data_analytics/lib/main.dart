@@ -25,6 +25,7 @@ class _DataAnalyticsState extends State<DataAnalytics> {
     for (int i = 0; i < 40; i++) {
       _data.add(Data.fromJson(list[i]));
     }
+    print(_data);
 
     setState(() {
       _loading=false;
